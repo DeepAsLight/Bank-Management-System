@@ -1,0 +1,98 @@
+ private double balance;
+    private long accNum;
+    private String accHolder;
+     
+     public Account(String name, long num)
+     {
+    	 accHolder = name;
+         accNum = num;
+         balance = 0.00;
+    	 System.out.println("Account Created");
+     }
+     
+     public void deposit(double amt)
+     {
+    	 balance = balance + amt;
+    	 System.out.println("Amount Deposited.");
+     }
+     
+     public void withdraw(double amt) throws BankAccountException
+     {
+    	 try
+    	 { 
+    	    if(balance >= amt)
+    	    {
+    		    balance = balance - amt;
+        	    System.out.println("Amount Withdrawn");
+    	    }
+    	    else
+    	    {
+    		    throw new BankAccountException("Could not Withdraw: Insufficent Amount.");
+    	    }
+    	 }
+    	 catch(BankAccountException bae)
+    	 {
+              bae.printStackTrace();
+         }
+     }
+     
+     public void printBalance()
+     {
+    	 System.out.println("Current balance: " + balance);    	 
+     }
+     public double getBalance()
+     {
+         return balance;
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    public BankAccountException()
+	{
+		super();
+	}
+	public BankAccountException(String msg)
+	{
+		super(msg);
+	}
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+package BankAccount;
+
+/**
+ *
+ * @author hp
+ */
+class cpno {
+
+    static String getText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
